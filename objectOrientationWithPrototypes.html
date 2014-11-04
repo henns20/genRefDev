@@ -14,7 +14,40 @@
     <li>Serve a similar purpose to that of <em>classes</em> in classical object-oriented languages </li>
     <li>Prototypes predominant use is to produce a classical style of object oriented code and inheritance</li>
     <li>Prototype property (property available in all functions) is really only useful when used with a constructor.</li>
-    <li></li>
+    <li><b>Object Literals</b></li>
+    <li><code>var myObj = {}; myObj.name = "fred"; myObj.myObjMethod = function() {return true;};</code></li>
+    <li><b>Using Prototypes</b></li>
+    <li><b>Constructor Functions & the new keyword</b></li>
+    <li><code>function Ninja() {} <br/>
+            Ninja.prototype.swingSword = function() {return true;} <br/>
+            var ninja1 = new Ninja();<br/>
+            ninja1.swingSword(); // true <br/>
+            // important: ninja references the prototype of the constructor it is not copied. <br/>
+            // so change to prototype at the constructor level would - change the value at the instance
+    </code></li>
+    <li><b>Instance properties Override Prototype properties</b><br/> // <code>var ninja1 = new Ninja() {this.swingSword = functioin() {}}</code><br/></li>
+    <li><b>Instances reference the prototype</b></li>
+    <li>Prototype is a property of the constructor.// myObj.constructor.prototype.swingSword // function ()  {return true} </li>
+    <li><em>typeof</em> operator : ie. if(typeof ninja1 == "object")...</li>
+    <li><em>instanceof</em> ie. if(ninja1 instanceof Ninja) etc...</li>
+    <li><em>Constructor Property</em> ie. if(ninja1.constructor == Ninja)</li>
+    <li><b>Instantiating Obj using reference to constructor</b></li>
+    <li><code>function Ninja(){};<br/>
+            var ninja1 = new Ninja();<br/>
+            var ninja2 = new ninja1.constructor(); <br/>
+            // creates new obj and they are unique from one another so <br/>
+            assert(ninja1 !== ninja2, "But not the same ninja!" );
+        </code></li>
+    <li><b>Inheritance with Prototypes: pg 130</b></li>
+    <li><code>function Person() {}; <br/>
+            Person.prototype.dance = function() {};<br/>
+            function Ninja() {}; <br/>
+            Ninja.prototype = new Person; <br/>
+            var ninja1 = new Ninja; <br/>
+            // assert(ninja1 instanceof Person [Ninja, & Object]) // true <br/>
+            // assert(ninja1.dance == "function") // true
+        </code></li>
+
 
 </ul>
 
