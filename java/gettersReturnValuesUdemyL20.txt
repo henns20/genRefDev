@@ -1,0 +1,51 @@
+//Getters & Return Values
+// using a return value in a method 
+// showing the difference from void and when you want to return something 
+// you declare the type of return value you are expecting ie. int 
+// getter methods the syntax is sown here but the reasons are in a further lecture.  
+
+class Person {
+
+	String name;
+	int age;
+
+	void speak() {
+	System.out.println("My name is " + name + "and my age is " + age);
+	}
+
+
+	int calculateYearsFromRetirement() {
+	int yearsLeft = 65 - age;
+	
+	return yearsLeft;
+	}	
+
+	int getAge() {
+	return age;
+	}
+
+	String getName() {
+	return name;
+}
+}
+
+public class App {
+
+	public static void main(String[] args) {
+
+	Person person1 = new Person();
+	person1.name = "Scott Pelly";
+	person1.age = 27;
+
+	person1.speak();
+
+	// so declaring int variable years and setting it to the return value of the method.  
+
+	int years = person1.calculateYearsFromRetirement();
+
+	// using the getters 
+	int person1.getAge();
+	String person1.getName();
+
+	}
+}

@@ -1,0 +1,73 @@
+//javaScript
+// prototypes serve as the bluePrint vs classes - like in classical oop languages
+// prototypes are used throughout JavaScript to define properties and functionality that will automatically be applied to instances of objects
+// all functions have a protptype property 
+
+// literal instantiation
+
+var person = {};
+person.name = "Jame Boggs";
+person.age = 38;    
+
+// Using a constructor function and prototype properties
+
+function Person() {}
+var person1 = new Person();
+person1.name = "Jamie";
+person1.age = 38; 
+
+ console.log(person1.age); // 38
+
+
+ 
+
+
+
+
+
+// php
+
+class Person {
+	public $name;
+	public $age;
+
+}
+
+$me = new Person();
+$me->age = 38;
+$me->name = 'Jamei Boggs';
+
+$you = new Person();
+$you->name = "Terry Smith";
+$you->age = 20;
+
+
+
+
+// java
+
+class Person {
+	
+	String name;
+	int age;
+
+}
+
+public class App {
+
+	public static void main(String[] args) {
+	
+	// create an object(instance)
+	Person.person1 = new Person();
+	
+	// adding properties to objects instances. 
+	person1.name = "jamie boggs";
+	person1age = 37;
+
+	Person.person2 = new Person();
+	person2.name = "Fred With";
+	person2.age = 20;
+
+}
+
+}
