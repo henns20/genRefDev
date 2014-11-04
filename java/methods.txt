@@ -1,0 +1,27 @@
+// java methods also called subroutines
+
+class Person() {
+
+	String name;
+	int age;
+	
+// void keyword indicates no return value is coming
+	void speak() {
+	System.out.println("My name is " + name + "and my age is " + age);
+}
+
+public class App {
+
+	public static void  main(String[] args) {
+
+	Person person1 = new Person();
+	person1.name = 'Jamie';
+	person1.age = 38;
+	person1.speak(); // My name is Jamie and my age is 38 
+
+}
+
+}
+
+
+}
