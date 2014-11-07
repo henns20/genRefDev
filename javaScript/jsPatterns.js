@@ -50,7 +50,7 @@ Subject.prototype.addObserver = function (observer ) {
 };
 
 Subject.prototype.removeObserver = function ( observer ) {
-	this.observers.removeAt(this.observers.indexOf( observer, 0 ) ); 
+	this.observers.removeAt(this.observers.indexOf( observer, 0 ) );
 };
 
 Subject.prototype.notify = function( context ) {
@@ -73,9 +73,9 @@ function Observer() {
 // 3. a container for the new checkboxes being added 
 
 //HTML:
-<button id="addNewObserver">Add New Observer checkbox</button>
-<input id="mainCheckbox" type="checkbox" />
-<div id="observersContainer'></div>
+// <button id="addNewObserver">Add New Observer checkbox</button>
+// <input id="mainCheckbox" type="checkbox" />
+// <div id="observersContainer'></div>
 
 // Sample Script:
 
@@ -90,7 +90,7 @@ function extend ( extension, obj ) {
 
 var controlCheckbox = document.getElementById( "mainCheckbox"  ), 
 	addBtn = document.getElementById( "addNewObserver" ), 
-	container = doucment.getElementById( "observersContainer"  );
+	container = document.getElementById( "observersContainer"  );
 	
 // Concrete Subject
 // Extend the controlling checkbox with the Subject class 
@@ -98,14 +98,40 @@ extend( new Subject(), controlCheckbox );
 
 // clicking the checkbox will trigger notifications to its observers
 controlCheckbox.onclick = function() {
-	controlCheckbox.notify( controlCheckbox.checked ); 
+	controlCheckbox.notify( controlCheckbox.checked );
+}
 
-addBtn.onclick = addNewObserver
+addBtn.onclick = addNewObserver;
 
 //Concrete Observer
 
 function addNewObserver() {
+
+    // create a new checkBox to be added
+
+    var check = document.createElement("input");
+    check.type = "checkbox";
+
+    // Extend the checkbox with the Observer class
+
+    extend(new Observer, check);
+
+    // Override with custom update behavior
+
+    check.update = function (value) {
+
+        this.checked = value;
+
+    };
+
+    // Add a new observer to our list of observers
+    // for out main object
+
+    controlCheckbox.addObserver(check);
+
+
+    // Append the item to the container
+    container.appendChild(check);
 	
-}
 }
 
