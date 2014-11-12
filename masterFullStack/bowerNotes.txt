@@ -1,0 +1,7 @@
+// this is notes to explain bower and may be even considered a birds eye view
+
+
+bower
+	*def:package manager
+		*
+		
