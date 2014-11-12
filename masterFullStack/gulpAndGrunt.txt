@@ -1,0 +1,12 @@
+// notes on grunt and gulp
+
+	*Gulp
+		*def:'Streaming BUild System'
+			*no real good clear info that like the Grunt below info
+
+
+	*Grunt
+		*def: 'the JavaScript Task Runner'
+			*what is a task Runner
+				*Automation: automates minificaton, compilation, unit testing, linting
+		*Gruntfile: onced configured thru that file - the task runner can do all the mundane work for you. 

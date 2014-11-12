@@ -2,6 +2,26 @@
 
 
 bower
-	*def:package manager
-		*
+	*def:package manager for the web.
+		*whats a package manager
+			*automates the process of installing, upgrading, conofiguring, and removing software packages for a computer's operating system.
+		*whats bower?
+			*package manager for the web as it states. 
+			*Wikipedia: package manager for client-side programming on the web.
+			*depends on node.js, npm. It works with git and Github. 
+		*example packages: jQuery can be installed and maintained wit bower.
+	*Other notes:
+		*commands
+			*bower init (initiates the bower and creates bower.json)
+				*bower.json file manifest file - defines, configures the package
+			*bower install <package> --save (installs the pkg and saves it to the bower.json)
+				*bower install variations
+					*bower install <package>#<version> // ie. jquery#2.1
+					*bower install <package> --save --dev // saves to the development section of the bower.json config file. 
+			*bower update
+			*bower uninstall
+		*bower_components file 
+			* default location where all of the paclages will be placed
+			* generates as you install your first dependency or install a package separately
+			
 		
