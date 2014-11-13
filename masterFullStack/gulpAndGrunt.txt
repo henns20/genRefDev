@@ -2,7 +2,12 @@
 
 	*Gulp
 		*def:'Streaming BUild System'
-			*no real good clear info that like the Grunt below info
+			*not real clear info like the Grunt below info
+				* ill come back to it - but it may be easiest to include it in a taskRunner category
+    *First steps to work with it:
+			* install globally with npm
+			* install locally in project folder// npm install gulp --save-dev
+			*
 
 
 	*Grunt
