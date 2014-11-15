@@ -74,12 +74,72 @@ describe("SubjectNotifyTest", function() {
         for(var i = 0; i < 3; i++) {
             args[i] = actual[i];
         }
-
-
         expect(args).toEqual(["String", 1, 32]);
+
+    });
+});
+
+//Adding Bogus Observers
+
+describe("Adding Bogus Observers", function() {
+
+    it("The 'toThrow' matcher is for testing if a function throws an exception", function() {
+        var subject = new tddjs.Subject();
+        var observer1 = function (){};
+
+        function testaddObserver() {
+            subject.addObserver(observer1);
+        }
+
+        expect(testaddObserver).not.toThrow();
+
+    });
+});
+
+
+describe("Misbehaving Observers", function() {
+    it("test should notify all even when some fail", function() {
+        var subject = new tddjs.Subject();
+        var observer1 = function() { throw new Error("Oops");};
+        var observer2 = function() {observer2.called = true;}
+
+        subject.addObserver(observer1);
+        subject.addObserver(observer2);
+        subject.notify();
+
+        expect(observer2.called).toBe(true);
+
 
     });
 });
 
 
 
+describe('Documenting the call order', function() {
+    it("observers should be called int he way they are added", function() {
+        var subject = new tddjs.Subject();
+        var calls = [];
+        var observer1 = function() {
+            calls.push(observer1);
+        }
+        var observer2 = function() { calls.push(observer2);};
+        subject.addObserver(observer1);
+        subject.addObserver(observer2);
+
+        subject.notify();
+        expect(observer1).toBe(calls[0]);
+        expect(observer2).toBe(calls[1]);
+    });
+});
+
+
+describe("Making the Constructor Obsolete", function () {
+    it("should not fail with no observers", function () {
+        var subject = new tddjs.Subject();
+
+    function callNotify() {
+        subject.notify();
+    }
+        expect(callNotify).not.toThrow();
+    });
+});
