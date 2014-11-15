@@ -5,9 +5,36 @@
 			*not real clear info like the Grunt below info
 				* ill come back to it - but it may be easiest to include it in a taskRunner category
     *First steps to work with it:
-			* install globally with npm
+			* install globally with npm 
+			* create a package.json file or use npm init to make one
 			* install locally in project folder// npm install gulp --save-dev
-			*
+			* greate the gulpfile.js with the one liner require and good
+		* from Tut by andy carter
+		* url http://andy-carter.com/blog/a-beginners-guide-to-the-task-runner-gulp
+		* Concatenation Files with Gulp
+		* notes
+			* Gulp on its own doesn't do a lot
+			* plugins and tasks need to be added to gulpfile
+		* to concatenate files - gulp-concat plugin is needed
+		* // npm install gupl-concat --save-dev
+		* next: add task to gulpfile: instructs Gulp to concatenate some files. Ie. the project's Javascript files.
+		* see fullstacklocalsandbox for gulpfile
+		* gulp command: excutes the gulpfile.js
+
+		*MINIFY	the JavaScript with Gulp
+		* in this case we now can minify the concatenated file
+		* Steps:
+			* install a plugin
+			* modify the gulpfile - add or modify a task
+			*minifying uses gulp-uglify & another plugin called gulp-rename
+        *Image Optimisation with Gulp
+            *uses: gulp-imagemin and gulp-cache
+        *Watching for Changes
+            *what is it
+            * at the moment we need to run gulp each time we amke a chnge to a file
+            *gulp can watch for changes and automatically run tasks.
+            *Unlike Grunt, Gulp can do this out of the box. So that means no plugin
+            *Watch Task
 
 
 	*Grunt
