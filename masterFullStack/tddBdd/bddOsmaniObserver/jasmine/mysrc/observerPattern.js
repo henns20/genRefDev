@@ -12,7 +12,7 @@ function ObserverList() {
 
 ObserverList.prototype.add = function(obj) {
     if((parseFloat(obj) == parseInt(obj)) && !isNaN(obj)) {
-        return false;
+        return false;t
     } else
         this.observers.push(obj);
 

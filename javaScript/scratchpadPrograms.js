@@ -69,4 +69,48 @@ BouncingCritter.prototype.act = function(view) {
 return {type: "move", direction: this.direction};
 };
 
+i// 
+
+BouncingCritter.prototype.act = function(view) {
+	if(view.look(this.direction) != " ")
+	this.direction = view.find(" ") || "s";
+	return {type: "move", direction: this.direction}
+};
+
+BouncingCritter.prototype.act = function(view) {
+	if(view.look(this.direction) != " ")
+	this.direction = view.find(" ") || "s";
+	return {type: "move", direction: this.direction};
+};
+
+BouncingCritter.prototype.act = function(view) {
+	if(view.look(this.direction) != " ")
+	this.direction = view.find(" ") || "s";
+	return {type:"move", direction: this.direction }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BouncingCritter.prototype.act = function(view) {
+	if(view.look(this.direction) != " ")
+	this.direction = view.find(" ") || "s";
+	return {type:"move", direction: this.direction};
+	
+};
+
+
 
